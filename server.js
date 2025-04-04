@@ -8,7 +8,9 @@ const app = express();
 const PORT = 5000;
 
 // Middleware
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: "https://jatinvishwakarma001.github.io"
+}));
 app.use(bodyParser.json());
 app.use(express.static("public")); // Serve static files
 
