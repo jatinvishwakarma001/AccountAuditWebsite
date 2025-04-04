@@ -13,7 +13,7 @@ document.getElementById("purchaseForm").addEventListener("submit", async functio
     formData.append("fileUpload", document.getElementById("fileUpload").files[0]);
 
     try {
-        let response = await fetch("http://localhost:5000/submit-form", {
+        let response = await fetch("https://YOUR-BACKEND-URL.onrender.com/submit-form", {
             method: "POST",
             body: formData
         });
