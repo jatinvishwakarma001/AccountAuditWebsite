@@ -1,79 +1,163 @@
+/* Base Reset & Typography */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Header & Nav */
 header {
-    background-color: #333;
+    background-color: #004080;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 5px 15px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Section Styling */
 section {
     padding: 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-#pricing button {
-    background-color: #28a745;
+h2 {
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+/* Service Items */
+.service-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 700px;
+    transition: box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.service-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.service-header button {
+    background-color: #004080;
     color: white;
-    padding: 10px;
     border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+}
+
+.service-header button:hover {
+    background-color: #0059b3;
+}
+
+.service-description {
+    margin-top: 10px;
+    display: none;
+    font-size: 16px;
+}
+
+/* Pricing Page Button */
+#pricing button {
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 #pricing button:hover {
-    background-color: #218838;
+    background-color: #0059b3;
 }
 
-#purchaseForm {
-    display: none;
-    margin-top: 20px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f9f9f9;
-}
-
-#purchaseForm label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#purchaseForm input, #purchaseForm select, #fileUpload {
+/* Responsive Iframe for Google Forms */
+form iframe {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-}
-
-#purchaseForm button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+    max-width: 100%;
     border: none;
-    cursor: pointer;
-    width: 100%;
 }
 
-#purchaseForm button:hover {
-    background-color: #0056b3;
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .service-header button {
+        width: 100%;
+    }
+
+    header, section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .service-header h3 {
+        font-size: 18px;
+    }
+
+    .service-header button {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
